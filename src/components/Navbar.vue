@@ -34,28 +34,27 @@ export default {
       bus.$emit("nameChanged", "this is in the navbar");
     },
   },
-  beforeCreate() {
-    alert("Runs before creation");
-  },
-  created() {
-    alert("Created");
-  },
-  beforeMount() {
-    alert("Before Mount");
-  },
-  mounted() {
-    alert("Mounted");
-  },
-  beforeUpdate() {
-    alert("before update");
-  },
-  updated() {
-    alert("Updated");
-  },
+  // beforeCreate() {
+  //   alert("Runs before creation");
+  // },
+  // created() {
+  //   alert("Created");
+  // },
+  // beforeMount() {
+  //   alert("Before Mount");
+  // },
+  // mounted() {
+  //   alert("Mounted");
+  // },
+  // beforeUpdate() {
+  //   alert("before update");
+  // },
+  // updated() {
+  //   alert("Updated");
+  // },
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
+  
 <style scoped>
 nav {
   display: flex;
