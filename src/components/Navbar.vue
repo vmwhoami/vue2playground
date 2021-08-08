@@ -1,45 +1,63 @@
 <template>
- <nav>
-   <a href="#" @click="changeName">{{logo}}</a>
-   <ul>
+  <nav>
+    <a href="#" @click="changeName">{{ logo }}</a>
+    <ul>
       <li v-for="link in links" :key="link.id">
-        <a :href="link.link">{{link.name}}</a>
+        <a :href="link.link">{{ link.name }}</a>
       </li>
-   </ul>
- </nav>
+    </ul>
+  </nav>
 </template>
 
 <script>
-import bus from '../main';
- 
+import bus from "../main";
+
 export default {
-  name: 'Navbar',
+  name: "Navbar",
   props: {
-    logo:{
-      type:String,
-      require:true
+    logo: {
+      type: String,
+      require: true,
     },
-    links:{
-      type:Array,
-      require:true
-    }
+    links: {
+      type: Array,
+      require: true,
+    },
   },
-  data(){
-    return {}  
+  data() {
+    return {};
   },
-  methods:{
-changeName(){
-  // this.$emit("changeName", 'hellllllllllllllo there')
-  this.logo = "Sume change"
-  bus.$emit("nameChanged", "this is in the navbar")
-}
-  }
-}
+  methods: {
+    changeName() {
+      // this.$emit("changeName", 'hellllllllllllllo there')
+      this.logo = "Sume change";
+      bus.$emit("nameChanged", "this is in the navbar");
+    },
+  },
+  beforeCreate() {
+    alert("Runs before creation");
+  },
+  created() {
+    alert("Created");
+  },
+  beforeMount() {
+    alert("Before Mount");
+  },
+  mounted() {
+    alert("Mounted");
+  },
+  beforeUpdate() {
+    alert("before update");
+  },
+  updated() {
+    alert("Updated");
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-nav{
+nav {
   display: flex;
   background-color: black;
   align-items: center;
@@ -60,7 +78,7 @@ a {
   text-decoration: none;
   color: white;
 }
-a:hover{
+a:hover {
   text-decoration: underline;
 }
 </style>

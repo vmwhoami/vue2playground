@@ -1,6 +1,6 @@
 <template>
-  <footer>
-    <div>&#169;{{ copyright }}</div>
+  <footer class="flex justify-center bg-gray-900 color-white-900 py-9">
+    <div class="text-white">&#169;{{ copyright }}</div>
   </footer>
 </template>
 
@@ -14,7 +14,7 @@ export default {
   },
   data() {
     return {
-      copyright: "Copyright 2020-" + new Date().getFullYear(),
+      copyright: "Copyright  2020-" + new Date().getFullYear(),
     };
   },
   created() {
@@ -26,9 +26,6 @@ export default {
 </script>
 
 <style scoped>
-footer {
-  display: flex;
-}
 </style>>
 
  
