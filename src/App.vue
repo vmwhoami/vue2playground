@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <my-nav :links="links" :logo="name" v-on:changeName="changeName($event)"></my-nav>
-<add-blog></add-blog>
+    <add-blog></add-blog>
     <my-footer :name="name" ></my-footer>
   </div>
 </template>
