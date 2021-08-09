@@ -68,7 +68,7 @@
   },
   methods:{
     submitForm(){
-      this.$http.post("http://my-json-server.typicode.com/posts",{
+      this.$http.post("https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/",{
         title:this.blog.title,
         body:this.blog.textField,
         userId:1,
