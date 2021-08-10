@@ -66,8 +66,6 @@
       authors:["Hemingway","Tolstoy","Artos","Bartos"],
     }
   },
-
- 
   methods:{
     submitForm(){
       console.log(this.blog);
@@ -80,9 +78,13 @@
          _repeat: 300,
       }
       }).then((data)=>{
-        console.log(data);
+       console.log(data);
       }).catch((err)=>console.log(err))
     }
+  },
+  created(){
+this.$http.get('https://app.fakejson.com/q')
+.then(data=>console.log(data))
   }
  }
 </script>
