@@ -66,12 +66,19 @@
       authors:["Hemingway","Tolstoy","Artos","Bartos"],
     }
   },
+
+ 
   methods:{
     submitForm(){
-      this.$http.post("https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/",{
-        title:this.blog.title,
-        body:this.blog.textField,
-        userId:1,
+      console.log(this.blog);
+      this.$http.post("https://app.fakejson.com/q",{
+         token: "mfHnD08Jbg1TFysZWQgmFA",
+         data: {
+         name: "nameFirst",
+         email: "internetEmail",
+         phone: "phoneHome",
+         _repeat: 300,
+      }
       }).then((data)=>{
         console.log(data);
       }).catch((err)=>console.log(err))
