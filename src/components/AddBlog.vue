@@ -82,10 +82,7 @@
       }).catch((err)=>console.log(err))
     }
   },
-  created(){
-this.$http.get('https://app.fakejson.com/q')
-.then(data=>console.log(data))
-  }
+
  }
 </script>
 
