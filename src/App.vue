@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <my-nav :links="links" :logo="name" v-on:changeName="changeName($event)"></my-nav>
+    <show-blogs></show-blogs>
     <add-blog></add-blog>
     <my-footer :name="name" ></my-footer>
   </div>
@@ -10,6 +11,7 @@
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import AddBlog from './components/AddBlog.vue'
+import ShowBlogs from './components/ShowBlogs.vue'
 const links = [
   {id:1,name:"Home",link:"/home"},
   {id:2,name:"About",link:"/about"},
@@ -20,7 +22,8 @@ export default {
   components: {
     'my-nav':Navbar,
     'my-footer':Footer,
-    'add-blog':AddBlog
+    'add-blog':AddBlog,
+    ShowBlogs
   },
   data(){
     return{
