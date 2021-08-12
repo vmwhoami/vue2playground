@@ -10,11 +10,11 @@
     return{
         blogs:[]
     }
-//   created(){
-// this.$http.get('https://app.fakejson.com/q')
-// .then(data=>console.log(data))
-//   }
- }
+ },
+  created(){
+    this.$http.get('https://api.publicapis.org/entries')
+    .then(data=>console.log(data))
+  }
  }
 </script>
 
