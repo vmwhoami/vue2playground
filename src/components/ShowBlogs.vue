@@ -1,7 +1,7 @@
 <template>
  <div>
      <h2>Show blogs</h2>
-     <li v-for="post in posts" :key="post.API">{{post.Description}}</li>
+     <li v-rainbow v-for="post in posts" :key="post.API">{{post.Description}}</li>
  </div>
 </template>
 
