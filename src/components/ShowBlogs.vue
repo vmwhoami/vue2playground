@@ -1,7 +1,7 @@
 <template>
  <div>
-     <h2>Show blogs</h2>
-     <li v-rainbow v-for="post in posts" :key="post.API">{{post.Description}}</li>
+     <h2 >Show blogs</h2>
+     <li v-theme ="'wide'" v-rainbow v-for="post in posts" :key="post.API">{{post.Description}}</li>
  </div>
 </template>
 
@@ -21,7 +21,7 @@
   }
  }
 </script>
-
+.red
 <style scoped>
 
 </style>

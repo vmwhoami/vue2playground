@@ -8,12 +8,22 @@ Vue.config.productionTip = false
 Vue.use(VueResource);
 // Custom directive
 Vue.directive("rainbow", {
-  bind: function(el) {  
+  bind: (el)=>{  
     el.style.backgroundColor = `#${Math.random().toString().slice(2,8)}`;  
-    el.style.color = `#${Math.random().toString().slice(2,8)}`;
+    el.style.color = `white`;
+    el.style.listStyleType = "none";
   },   
 });
 
+Vue.directive("theme", {
+  bind: (el, binding)=>{
+    if(binding.value == "wide"){
+      el.style.maxWidth = "800px";
+      el.style.margin = "0 auto";
+      el.style.padding = "10px 20px"
+    }
+  }
+})
 export default new Vue();
 
 new Vue({
