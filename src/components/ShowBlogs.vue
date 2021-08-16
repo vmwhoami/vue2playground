@@ -3,7 +3,7 @@
      <h2 >Show blogs</h2>
      <li v-theme ="'wide'" v-rainbow v-for="post in posts" :key="post.API">
        <h2>{{post.Category | to-uppercase}}</h2>
-       {{post.Description }}
+       {{post.Description | snippet}}
      </li>
  </div>
 </template>
