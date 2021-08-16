@@ -24,6 +24,13 @@ Vue.directive("theme", {
     }
   }
 })
+
+// Custom filters
+Vue.filter("to-uppercase", (value)=>{ 
+  return value.toUpperCase();
+}
+)
+
 export default new Vue();
 
 new Vue({
