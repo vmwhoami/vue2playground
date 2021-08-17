@@ -27,7 +27,7 @@
   },
    computed:{
      filteredBlogs(){
-       return this.blogs.filter((blog)=>{
+       return this.posts.filter((post)=>{
          return post.Category.match(this.searchField)
        })
      }
