@@ -29,7 +29,7 @@ Vue.directive("theme", {
 Vue.filter("to-uppercase", (value)=>{ 
   return value.toUpperCase();
 })
-Vue.filter("snippet", (value)=>{
+Vue.filter("snipet", (value)=>{
   return `${value.split(' ').slice(0,3).join(' ')}...`;
 
 })
