@@ -2,7 +2,7 @@
  <div>
      <h2 >Show blogs</h2>
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
-     <li v-theme ="'wide'" v-rainbow v-for="post in posts" :key="post.API">
+     <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.API">
        <h2>{{post.API | to-uppercase}}</h2>
        {{post.Description | sniped}}
      </li>
@@ -26,7 +26,7 @@
    computed:{
      filteredBlogs(){
        return this.posts.filter((post)=>{
-         return post.Description.match(this.searchField)
+         return post.Description.toLowerCase().match(this.searchField.toLowerCase())
        })
      }
    }
