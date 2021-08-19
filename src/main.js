@@ -25,10 +25,10 @@ Vue.directive("theme", {
   }
 })
 
-// Custom filters
-Vue.filter("to-uppercase", (value)=>{ 
-  return value.toUpperCase();
-})
+// Custom global filters
+// Vue.filter("to-uppercase", (value)=>{ 
+//   return value.toUpperCase();
+// })
 Vue.filter("snipet", (value)=>{
   return `${value.split(' ').slice(0,3).join(' ')}...`;
 

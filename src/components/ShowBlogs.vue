@@ -4,7 +4,7 @@
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
      <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.API">
        <h2>{{post.API | to-uppercase}}</h2>
-       {{post.Description | sniped}}
+       {{post.Description | snipet}}
      </li>
  </div>
 </template>
@@ -28,6 +28,11 @@
        return this.posts.filter((post)=>{
          return post.Description.toLowerCase().match(this.searchField.toLowerCase())
        })
+     }
+   },
+   filters:{
+     toUppercase(value){
+      return value.toUpperCase();
      }
    }
  }
