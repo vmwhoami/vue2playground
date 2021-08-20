@@ -15,15 +15,15 @@ Vue.directive("rainbow", {
   },   
 });
 
-Vue.directive("theme", {
-  bind: (el, binding)=>{
-    if(binding.value == "wide"){
-      el.style.maxWidth = "800px";
-      el.style.margin = "0 auto";
-      el.style.padding = "10px 20px"
-    }
-  }
-})
+// Vue.directive("theme", {
+//   bind: (el, binding)=>{
+//     if(binding.value == "wide"){
+//       el.style.maxWidth = "800px";
+//       el.style.margin = "0 auto";
+//       el.style.padding = "10px 20px"
+//     }
+//   }
+// })
 
 // Custom global filters
 // Vue.filter("to-uppercase", (value)=>{ 

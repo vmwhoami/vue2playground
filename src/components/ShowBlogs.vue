@@ -34,6 +34,17 @@
      toUppercase(value){
       return value.toUpperCase();
      }
+   },
+   directives:{
+     'theme':{
+        bind: (el, binding)=>{
+        if(binding.value == "wide"){
+          el.style.maxWidth = "800px";
+          el.style.margin = "0 auto";
+          el.style.padding = "10px 20px"
+        }
+      }
+     }
    }
  }
 </script>
