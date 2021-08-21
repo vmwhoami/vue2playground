@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import searchMixin from '../mixins/searchMain'
  export default{
   data(){
     return{
@@ -22,14 +23,8 @@
     .then(data=>{
       this.posts = data.data.entries.slice(0, 30)
         })
-  },
-   computed:{
-     filteredBlogs(){
-       return this.posts.filter((post)=>{
-         return post.Description.toLowerCase().match(this.searchField.toLowerCase())
-       })
-     }
-   },
+  }, 
+  
    filters:{
      toUppercase(value){
       return value.toUpperCase();
@@ -45,7 +40,8 @@
         }
       }
      }
-   }
+   },
+   mixins:[searchMixin]
  }
 </script>
 .red
