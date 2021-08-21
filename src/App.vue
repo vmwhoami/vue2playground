@@ -3,6 +3,7 @@
     <my-nav :links="links" :logo="name" v-on:changeName="changeName($event)"></my-nav>
     <show-blogs></show-blogs>
     <add-blog></add-blog>
+    <list-blogs></list-blogs>
     <my-footer :name="name" ></my-footer>
   </div>
 </template>
@@ -12,6 +13,7 @@ import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
 import AddBlog from './components/AddBlog.vue'
 import ShowBlogs from './components/ShowBlogs.vue'
+import ListBlogs from './components/ListBlogs.vue'
 const links = [
   {id:1,name:"Home",link:"/home"},
   {id:2,name:"About",link:"/about"},
@@ -23,6 +25,7 @@ export default {
     'my-nav':Navbar,
     'my-footer':Footer,
     'add-blog':AddBlog,
+    ListBlogs,
     ShowBlogs
   },
   data(){
