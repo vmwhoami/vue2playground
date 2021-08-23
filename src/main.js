@@ -10,7 +10,8 @@ Vue.config.productionTip = false
 Vue.use(VueResource);
 Vue.use(VueRouter);
 const router = new VueRouter({
-  routes: Routes 
+  routes: Routes,
+  mode:'history' 
 });
 // Custom directive
 Vue.directive("rainbow", {
