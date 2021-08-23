@@ -2,10 +2,13 @@ import Vue from 'vue';
 import App from './App.vue'
 import './assets/tailwind.css';
 import VueResource from 'vue-resource';
+import VueRouter from 'vue-router';
  
 
 Vue.config.productionTip = false
 Vue.use(VueResource);
+Vue.use(VueRouter);
+const router = new VueRouter({});
 // Custom directive
 Vue.directive("rainbow", {
   bind: (el)=>{  
