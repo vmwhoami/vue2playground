@@ -3,12 +3,15 @@ import App from './App.vue'
 import './assets/tailwind.css';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
+import Routes from './routes';
  
 
 Vue.config.productionTip = false
 Vue.use(VueResource);
 Vue.use(VueRouter);
-const router = new VueRouter({});
+const router = new VueRouter({
+  routes: Routes
+});
 // Custom directive
 Vue.directive("rainbow", {
   bind: (el)=>{  
@@ -41,4 +44,5 @@ export default new Vue();
 
 new Vue({
   render: h => h(App),
+  router
 }).$mount('#app')

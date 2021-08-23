@@ -2,7 +2,7 @@
 module.exports = {
     // options...
     devServer: {
-        port: 3000,  
+        port: 2000,  
         proxy: 'http://localhost/api',
       }
   }
