@@ -9,9 +9,7 @@
 <script>
 import Navbar from './components/Navbar.vue'
 import Footer from './components/Footer.vue'
-import AddBlog from './components/AddBlog.vue'
-import ShowBlogs from './components/ShowBlogs.vue'
-import ListBlogs from './components/ListBlogs.vue'
+ 
 const links = [
   {id:1,name:"Home",link:"/home"},
   {id:2,name:"About",link:"/about"},
@@ -22,9 +20,6 @@ export default {
   components: {
     'my-nav':Navbar,
     'my-footer':Footer,
-    'add-blog':AddBlog,
-    ListBlogs,
-    ShowBlogs
   },
   data(){
     return{
