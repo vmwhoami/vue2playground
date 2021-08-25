@@ -64,22 +64,17 @@
         author: ""
       },
       authors:["Hemingway","Tolstoy","Artos","Bartos"],
+      submitted: false
     }
   },
   methods:{
     submitForm(){
       console.log(this.blog);
-      this.$http.post("https://app.fakejson.com/q",{
-         token: "mfHnD08Jbg1TFysZWQgmFA",
-         data: {
-         name: "nameFirst",
-         email: "internetEmail",
-         phone: "phoneHome",
-         _repeat: 300,
-      }
-      }).then((data)=>{
-       console.log(data);
-      }).catch((err)=>console.log(err))
+      this.$http.post("https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts.json", this.blog)
+      .then((data)=>{
+        this.submitted = true
+       console.log(data)
+        }).catch((err)=>console.log(err))
     }
   },
 
