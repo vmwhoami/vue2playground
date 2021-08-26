@@ -2,9 +2,9 @@
  <div>
      <h2 >Show blogs</h2>
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
-     <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.title">
+     <li v-theme ="'wide'" v-rainbow v-for="post in posts" :key="post.title">
        <h2>{{post.title | to-uppercase}}</h2>
-       {{post.textField | snipet}}
+       {{post.textField }}
      </li>
  </div>
 </template>
@@ -26,8 +26,12 @@ import searchMixin from '../mixins/searchMain'
       ).then(data=>{
         return  data.json()})
         .then(data=>{
-        console.log(data);
-        
+          const arrayOfObjects = []
+          for (let key in data) {
+            data[key].id = data[key]
+            arrayOfObjects.push(data[key])
+          }
+         this.posts = arrayOfObjects;
         })
   }, 
   
