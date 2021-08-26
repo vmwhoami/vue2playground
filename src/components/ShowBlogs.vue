@@ -2,15 +2,16 @@
  <div>
      <h2 >Show blogs</h2>
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
-     <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.API">
-       <h2>{{post.API | to-uppercase}}</h2>
-       {{post.Description | snipet}}
+     <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.title">
+       <h2>{{post.title | to-uppercase}}</h2>
+       {{post.textField | snipet}}
      </li>
  </div>
 </template>
 
 <script>
 import searchMixin from '../mixins/searchMain'
+ 
  export default{
   data(){
     return{
@@ -19,9 +20,14 @@ import searchMixin from '../mixins/searchMain'
     }
  },
   created(){
-    this.$http.get('https://api.publicapis.org/entries')
-    .then(data=>{
-      this.posts = data.data.entries.slice(0, 30)
+    this.$http
+      .get(
+        "https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts.json"
+      ).then(data=>{
+        return  data.json()})
+        .then(data=>{
+        console.log(data);
+        
         })
   }, 
   
