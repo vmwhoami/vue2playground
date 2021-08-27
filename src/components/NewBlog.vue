@@ -21,6 +21,7 @@
                 >Content <span class="text-red-500">*</span></label
               >
               <ckeditor
+               class="h-48 mb-4 works"
                 :editor="editor"
                 v-model.lazy="blog.textField"
                 :config="editorConfig"
@@ -81,4 +82,5 @@ export default {
 </script>
 
 <style scoped>
+ 
 </style>
