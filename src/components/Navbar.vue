@@ -12,8 +12,8 @@
           hover:text-gray-700
           dark:hover:text-gray-300
         "
-        href="#"
-        >Brand</a
+        href="/"
+        >VMWHOAMI</a
       >
 
       <div
@@ -40,7 +40,7 @@
         >
 
         <a
-          href="/add"
+          href="/new"
           class="
             border-b-2 border-transparent
             hover:text-gray-800
@@ -49,7 +49,7 @@
             mx-1.5
             sm:mx-6
           "
-          >add</a
+          >new</a
         >
 
         <a
