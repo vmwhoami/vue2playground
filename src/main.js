@@ -4,11 +4,12 @@ import './assets/tailwind.css';
 import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import Routes from './routes';
- 
+import CKEditor from '@ckeditor/ckeditor5-vue2';
 
 Vue.config.productionTip = false
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.use( CKEditor );
 const router = new VueRouter({
   routes: Routes,
   mode:'history' 

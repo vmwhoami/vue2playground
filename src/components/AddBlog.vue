@@ -3,7 +3,7 @@
     <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
         <div class="p-6 bg-white border-b border-gray-200">
-          <form method="POST">
+          <form v-if="!submitted" method="POST">
             <div class="mb-4">
               <label class="text-xl text-gray-600"
                 >Title <span class="text-red-500">*</span></label
@@ -20,13 +20,11 @@
               <label class="text-xl text-gray-600"
                 >Content <span class="text-red-500">*</span></label
               >
-              <textarea
-                class="border-2 border-gray-500"
-                type="text"
-                name="text_field"
-                id="text_field"
+              <ckeditor
+                :editor="editor"
                 v-model.lazy="blog.textField"
-              ></textarea>
+                :config="editorConfig"
+              ></ckeditor>
             </div>
             <div class="flex p-1">
               <button
@@ -45,6 +43,7 @@
 </template>
 
 <script>
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 export default {
   data() {
     return {
@@ -55,6 +54,12 @@ export default {
         author: "",
       },
       authors: ["Hemingway", "Tolstoy", "Artos", "Bartos"],
+
+      editor: ClassicEditor,
+      editorData: "<p>Content of the editor.</p>",
+      editorConfig: {
+        // The configuration of the editor.
+      },
       submitted: false,
     };
   },
@@ -66,7 +71,7 @@ export default {
           "https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts.json",
           this.blog
         )
-        .then((data) => {
+        .then(() => {
           this.submitted = true;
         })
         .catch((err) => console.log(err));
