@@ -68,7 +68,6 @@ export default {
         )
         .then((data) => {
           this.submitted = true;
-          console.log(data);
         })
         .catch((err) => console.log(err));
     },
