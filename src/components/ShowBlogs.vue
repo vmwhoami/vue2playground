@@ -4,7 +4,8 @@
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
      <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.title">
        <h2>{{post.title | to-uppercase}}</h2>
-       {{post.textField }}
+       <div v-html="post.textField">{{post.textField}}</div>
+ 
      </li>
  </div>
 </template>
