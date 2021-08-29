@@ -23,7 +23,7 @@
               <ckeditor
                class="h-48 mb-4 works"
                 :editor="editor"
-                v-model.lazy="blog.textField"
+                v-model="blog.textField"
                 :config="editorConfig"
               ></ckeditor>
             </div>
@@ -45,6 +45,7 @@
 
 <script>
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+ import DOMPurify from 'dompurify';
 export default {
   data() {
     return {
@@ -57,7 +58,7 @@ export default {
       authors: ["Hemingway", "Tolstoy", "Artos", "Bartos"],
 
       editor: ClassicEditor,
-      editorData: "<p>Content of the editor.</p>",
+      editorData: "",
       editorConfig: {
         // The configuration of the editor.
       },
@@ -65,8 +66,7 @@ export default {
     };
   },
   methods: {
-    submitForm() {
-      console.log(this.blog);
+    submitForm() { 
       this.$http
         .post(
           "https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts.json",
@@ -77,6 +77,10 @@ export default {
         })
         .catch((err) => console.log(err));
     },
+    purifyText(){
+      this.editorData = DOMPurify.sanitize(this.blog.textField)
+      
+    }
   },
 };
 </script>

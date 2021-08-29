@@ -5,14 +5,13 @@
      <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.title">
        <h2>{{post.title | to-uppercase}}</h2>
        <div v-html="post.textField">{{post.textField}}</div>
- 
      </li>
  </div>
 </template>
 
 <script>
 import searchMixin from '../mixins/searchMain'
- 
+//  import DOMPurify from 'dompurify';
  export default{
   data(){
     return{
@@ -30,7 +29,7 @@ import searchMixin from '../mixins/searchMain'
           const arrayOfObjects = []
           for (let key in data) {
             data[key].id = data[key]
-            arrayOfObjects.push(data[key])
+            arrayOfObjects.push((data[key]))
           }
          this.posts = arrayOfObjects;
         })
