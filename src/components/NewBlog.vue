@@ -55,8 +55,6 @@ export default {
         checkbox: [],
         author: "",
       },
-      authors: ["Hemingway", "Tolstoy", "Artos", "Bartos"],
-
       editor: ClassicEditor,
       editorData: "",
       editorConfig: {
@@ -72,7 +70,8 @@ export default {
           "https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts.json",
          {
            title:this.blog.title,
-           textField: this.purifyText(this.blog.textField)
+           textField: this.purifyText(this.blog.textField),
+           timeOfPosting: new Date().toLocaleString(),
          }
         )
         .then(() => {
