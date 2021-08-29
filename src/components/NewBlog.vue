@@ -21,7 +21,7 @@
                 >Content <span class="text-red-500">*</span></label
               >
               <ckeditor
-               class="h-48 mb-4 works"
+                class="h-48 mb-4 works"
                 :editor="editor"
                 v-model="blog.textField"
                 :config="editorConfig"
@@ -45,7 +45,7 @@
 
 <script>
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
- import DOMPurify from 'dompurify';
+import DOMPurify from "dompurify";
 export default {
   data() {
     return {
@@ -66,25 +66,27 @@ export default {
     };
   },
   methods: {
-    submitForm() { 
+    submitForm() {
       this.$http
         .post(
           "https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts.json",
-          this.blog
+         {
+           title:this.blog.title,
+           textField: this.purifyText(this.blog.textField)
+         }
         )
         .then(() => {
           this.submitted = true;
         })
         .catch((err) => console.log(err));
     },
-    purifyText(){
-      this.editorData = DOMPurify.sanitize(this.blog.textField)
-      
-    }
+    purifyText(value) {
+       return DOMPurify.sanitize(value);
+    },
   },
+ 
 };
 </script>
 
 <style scoped>
- 
 </style>

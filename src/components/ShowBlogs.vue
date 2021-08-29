@@ -4,14 +4,14 @@
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
      <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.title">
        <h2>{{post.title | to-uppercase}}</h2>
-       <div v-html="post.textField">{{post.textField}}</div>
+       <div v-html="post.textField">{{post.textField }}</div>
      </li>
  </div>
 </template>
 
 <script>
-import searchMixin from '../mixins/searchMain'
-//  import DOMPurify from 'dompurify';
+import searchMixin from '../mixins/searchMain';
+import purifyText from '../mixins/purifyText';
  export default{
   data(){
     return{
@@ -29,12 +29,12 @@ import searchMixin from '../mixins/searchMain'
           const arrayOfObjects = []
           for (let key in data) {
             data[key].id = data[key]
-            arrayOfObjects.push((data[key]))
+      
+            arrayOfObjects.push(data[key])
           }
          this.posts = arrayOfObjects;
         })
   }, 
-  
    filters:{
      toUppercase(value){
       return value.toUpperCase();
@@ -51,7 +51,7 @@ import searchMixin from '../mixins/searchMain'
       }
      }
    },
-   mixins:[searchMixin]
+   mixins:[searchMixin,purifyText]
  }
 </script>
 .red
