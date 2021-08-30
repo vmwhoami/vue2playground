@@ -3,7 +3,11 @@
      <h2 >Show blogs</h2>
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
      <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.title">
-       <h2>{{post.title | to-uppercase}}</h2>
+       <h2>
+         <a :href="post.id">
+         {{post.title | to-uppercase}}
+         </a>
+         </h2>
        <div v-html="post.textField">{{post.textField | snipet}}</div>
      </li>
  </div>
@@ -28,10 +32,10 @@ import purifyText from '../mixins/purifyText';
         .then(data=>{
           const arrayOfObjects = []
           for (let key in data) {
-            data[key].id = data[key]
-      
+            data[key].id = key
             arrayOfObjects.push(data[key])
           }
+          console.log(arrayOfObjects);
          this.posts = arrayOfObjects;
         })
   }, 
