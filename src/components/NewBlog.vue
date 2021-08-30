@@ -72,7 +72,8 @@ export default {
           "https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts.json",
          {
            title:this.blog.title,
-           textField: this.purifyText(this.blog.textField)
+           textField: this.purifyText(this.blog.textField),
+ 
          }
         )
         .then(() => {

@@ -4,7 +4,7 @@
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
      <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.title">
        <h2>
-         <a :href="post.id">
+         <a :href="'blog/'+post.id">
          {{post.title | to-uppercase}}
          </a>
          </h2>

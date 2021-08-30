@@ -1,7 +1,7 @@
 <template>
   <div id="single-blog">
-      <h1></h1>
-      <article></article>
+       <h1>{{blog.id}}</h1>
+      <article v-html="blog.textField">{{blog.textField}}</article>
   </div>
 </template>
 
@@ -14,8 +14,14 @@ export default {
         }
     },
     created(){
-        //This wont work cause this route doesn't work like that
-        this.$http.get(`https://api.publicapis.org/entries/${this.id}`)
+        console.log("this is running");
+         this.$http.get(`https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts/${this.id}/.json`)
+         .then(data=>{
+             console.log(data);
+        return  data.json()})
+        .then(data=>{
+          this.blog = data
+        })
     }
 }
 </script>
