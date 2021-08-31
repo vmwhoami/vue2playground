@@ -9,6 +9,7 @@
          </a>
          </h2>
        <div v-html="post.textField">{{post.textField | snipet}}</div>
+       <span>{{post.timeStamp}}</span>
      </li>
  </div>
 </template>
