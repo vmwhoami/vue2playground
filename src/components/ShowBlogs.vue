@@ -17,11 +17,12 @@
 <script>
 import searchMixin from '../mixins/searchMain';
 import purifyText from '../mixins/purifyText';
+ 
  export default{
   data(){
     return{
         posts:[],
-        searchField:''
+        searchField:'',
     }
  },
   created(){
@@ -36,7 +37,7 @@ import purifyText from '../mixins/purifyText';
             data[key].id = key
             arrayOfObjects.push(data[key])
           }
-          console.log(arrayOfObjects);
+
          this.posts = arrayOfObjects;
         })
   }, 
@@ -56,7 +57,7 @@ import purifyText from '../mixins/purifyText';
       }
      }
    },
-   mixins:[searchMixin,purifyText]
+   mixins:[searchMixin,purifyText],
  }
 </script>
 .red

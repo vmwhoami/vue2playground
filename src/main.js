@@ -5,15 +5,9 @@ import VueResource from 'vue-resource';
 import VueRouter from 'vue-router';
 import Routes from './routes';
 import CKEditor from '@ckeditor/ckeditor5-vue2';
-import Vuex from 'vuex';
+import { store } from './store/store';
 
 Vue.config.productionTip = false
-Vue.use(Vuex)
-const store = new Vuex.Store({
-  state: {
-    count: 0
-  }
-})
 Vue.use(VueResource);
 Vue.use(VueRouter);
 Vue.use(CKEditor);
@@ -53,5 +47,6 @@ export default new Vue();
 
 new Vue({
   render: h => h(App),
+  store,
   router
 }).$mount('#app')
