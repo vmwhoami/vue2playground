@@ -1,6 +1,6 @@
 <template>
   <div id="single-blog">
-       <h1>{{blog.id}}</h1>
+       <h1>{{blog.title}}</h1>
       <article v-html="blog.textField">{{blog.textField}}</article>
   </div>
 </template>
@@ -20,6 +20,8 @@ export default {
              console.log(data);
         return  data.json()})
         .then(data=>{
+
+            console.log(data);
           this.blog = data
         })
     }
