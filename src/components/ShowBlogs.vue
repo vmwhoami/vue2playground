@@ -10,7 +10,7 @@
          </h2>
        <div v-html="post.textField">{{post.textField | snipet}}</div>
        <span>{{post.timeStamp}}</span>
-       <h2>the state is {{stateProp}}</h2>
+       <h2>the state is {{someName}}</h2>
      </li>
  </div>
 </template>
@@ -18,6 +18,7 @@
 <script>
 import searchMixin from '../mixins/searchMain';
 import purifyText from '../mixins/purifyText';
+import {mapState} from 'vuex';
  
  export default{
   data(){
@@ -60,11 +61,10 @@ import purifyText from '../mixins/purifyText';
      }
    },
    mixins:[searchMixin,purifyText],
-   computed:{
-     stateProp(){
-       return this.$store.state.propertiesName
-     }
-   }
+   computed: mapState({
+       someName:state =>state.propertiesName
+     })
+     
  }
 </script>
 .red
