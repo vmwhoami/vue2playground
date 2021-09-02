@@ -10,6 +10,7 @@
          </h2>
        <div v-html="post.textField">{{post.textField | snipet}}</div>
        <span>{{post.timeStamp}}</span>
+       <h2>the state is {{stateProp}}</h2>
      </li>
  </div>
 </template>
@@ -59,6 +60,11 @@ import purifyText from '../mixins/purifyText';
      }
    },
    mixins:[searchMixin,purifyText],
+   computed:{
+     stateProp(){
+       return this.$store.state.propertiesName
+     }
+   }
  }
 </script>
 .red
