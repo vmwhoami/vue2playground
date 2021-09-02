@@ -3,13 +3,13 @@
      <h2 >Show blogs</h2>
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
      <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.title">
-       <h2>{{post.title | to-uppercase}}</h2>
-       <div v-html="post.textField">
-         {{post.textField }}
-
-
-       </div>
-       <span>{{post.timeOfPosting}}</span>
+       <h2>
+         <a :href="'blog/'+post.id">
+         {{post.title | to-uppercase}}
+         </a>
+         </h2>
+       <div v-html="post.textField">{{post.textField | snipet}}</div>
+       <span>{{post.timeStamp}}</span>
      </li>
  </div>
 </template>
@@ -17,11 +17,12 @@
 <script>
 import searchMixin from '../mixins/searchMain';
 import purifyText from '../mixins/purifyText';
+ 
  export default{
   data(){
     return{
         posts:[],
-        searchField:''
+        searchField:'',
     }
  },
   created(){
@@ -33,9 +34,10 @@ import purifyText from '../mixins/purifyText';
         .then(data=>{
           const arrayOfObjects = []
           for (let key in data) {
-            data[key].id = data[key]
+            data[key].id = key
             arrayOfObjects.push(data[key])
           }
+
          this.posts = arrayOfObjects;
          console.log(arrayOfObjects);
         })
@@ -56,7 +58,7 @@ import purifyText from '../mixins/purifyText';
       }
      }
    },
-   mixins:[searchMixin,purifyText]
+   mixins:[searchMixin,purifyText],
  }
 </script>
 .red
