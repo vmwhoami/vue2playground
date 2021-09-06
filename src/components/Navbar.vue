@@ -17,9 +17,9 @@
         </svg>
        </router-link>
 
-      <div
+      <div 
         class="
-          flex
+          flex 
           items-center
           justify-center
           mt-2
@@ -28,7 +28,7 @@
           dark:text-white-300
         "
       >
-        <a
+        <router-link to="/" 
           href="/"
           class="
             text-white
@@ -38,11 +38,10 @@
             sm:mx-6
             hover:no-underline
           "
-          >home</a
-        >
+          >home</router-link >
 
-        <a
-          href="/new"
+        <router-link
+          to="/new"
           class="
             border-b-2 border-transparent
             hover:text-white
@@ -51,11 +50,11 @@
             mx-1.5
             sm:mx-6
           "
-          >new</a
+          >new</router-link
         >
 
-        <a
-          href="#"
+        <router-link
+          to="/"
           class="
             border-b-2 border-transparent
             hover:text-white
@@ -64,20 +63,7 @@
             mx-1.5
             sm:mx-6
           "
-          >pricing</a
-        >
-
-        <a
-          href="#"
-          class="
-            border-b-2 border-transparent
-            hover:text-white
-            dark:hover:text-white
-            hover:border-blue-500
-            mx-1.5
-            sm:mx-6
-          "
-          >blog</a
+          >pricing</router-link
         >
       </div>
     </div>

@@ -4,9 +4,9 @@
      <input type="text" v-model="searchField" placeholder="SearchBox" > 
      <li v-theme ="'wide'" v-rainbow v-for="post in filteredBlogs" :key="post.title">
        <h2>
-         <a :href="'blog/'+post.id">
+         <router-link :to="'blog/'+post.id">
          {{post.title | to-uppercase}}
-         </a>
+         </router-link>
          </h2>
        <div v-html="post.textField">{{post.textField | snipet}}</div>
        <span>{{post.timeStamp}}</span>
