@@ -33,7 +33,6 @@
           class="
             text-white
             dark:text-white
-            border-b-2 border-blue-500
             mx-1.5
             sm:mx-6
             hover:no-underline
@@ -128,5 +127,19 @@ nav {
   background-color: black;
   align-items: center;
   justify-content: space-between;
+}
+a.router-link-exact-active{
+  position: relative;
+}
+a.router-link-exact-active::after{
+  content: "";
+  position: absolute;
+  bottom:-5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  /* z-index: 2002; */
+  background-color: red;
 }
 </style>
