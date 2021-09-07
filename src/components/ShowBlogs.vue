@@ -8,9 +8,8 @@
          {{post.title | to-uppercase}}
          </router-link>
          </h2>
-       <div v-html="post.textField">{{post.textField | snipet}}</div>
+       <div v-html="post.textField"></div>
        <span>{{post.timeStamp}}</span>
-       <h2>the state is {{someName}}</h2>
      </li>
  </div>
 </template>
@@ -39,7 +38,6 @@ import {mapState} from 'vuex';
             data[key].id = key
             arrayOfObjects.push(data[key])
           }
-
          this.posts = arrayOfObjects;
          console.log(arrayOfObjects);
         })
