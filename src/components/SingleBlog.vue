@@ -1,33 +1,51 @@
 <template>
-  <div id="single-blog">
-       <h1>{{blog.title}}</h1>
-      <article v-html="blog.textField">{{blog.textField}}</article>
-  </div>
+  <article class="max-w-5xl mx-auto">
+    <header class="mb-14">
+      <h1
+        class="
+          text-3xl text-center
+          font-bold
+          leading-normal
+          text-gray-900
+          mt-0
+          mb-3
+        "
+      >
+      <div class="text-center">
+            {{ blog.title }}
+      </div>
+      
+      </h1>
+    </header>
+    <article v-html="blog.textField">{{ blog.textField }}</article>
+  </article>
 </template>
 
 <script>
 export default {
-    data(){
-        return{
-            id:this.$route.params.id,
-            blog:{}
-        }
-    },
-    created(){
-        console.log("this is running");
-         this.$http.get(`https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts/${this.id}/.json`)
-         .then(data=>{
-             console.log(data);
-        return  data.json()})
-        .then(data=>{
-
-            console.log(data);
-          this.blog = data
-        })
-    }
-}
+  data() {
+    return {
+      id: this.$route.params.id,
+      blog: {},
+    };
+  },
+  created() {
+    console.log("this is running");
+    this.$http
+      .get(
+        `https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts/${this.id}/.json`
+      )
+      .then((data) => {
+        console.log(data);
+        return data.json();
+      })
+      .then((data) => {
+        console.log(data);
+        this.blog = data;
+      });
+  },
+};
 </script>
 
 <style>
-
 </style>
