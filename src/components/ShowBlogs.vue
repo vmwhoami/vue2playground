@@ -14,22 +14,22 @@
           v-for="post in filteredBlogs"
           :key="post.title"
         >
-              <router-link :to="'blog/' + post.id">
-          <div class="rounded shadow-md h-full">
-            <h2>
-                {{ post.title}}
-            </h2>
-            <div v-html="post.textField"></div>
-            <span>{{ post.timeStamp }}</span>
-            
-          </div>
-            </router-link>
+          <router-link :to="'blog/' + post.id">
+            <div class="rounded shadow-md h-full">
+              <div class="px-6 py-5">
+                <p class="text-gray-700 mb-1">{{ post.timeStamp }}</p>
+                <h2>
+                  {{ post.title }}
+                </h2>
+                <div v-html="post.textField"></div>
+              </div>
+            </div>
+          </router-link>
         </div>
       </div>
     </main>
   </div>
 </template>
-
 
 <script>
 import searchMixin from "../mixins/searchMain";
