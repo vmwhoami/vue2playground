@@ -148,7 +148,7 @@ a.router-link-exact-active {
 a.router-link-exact-active::after {
   content: "";
   position: absolute;
-  bottom: -5px;
+  bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 50px;
