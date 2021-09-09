@@ -11,10 +11,9 @@
           mb-3
         "
       >
-      <div class="text-center">
-            {{ blog.title }}
-      </div>
-      
+        <div class="text-center">
+          {{ blog.title }}
+        </div>
       </h1>
     </header>
     <article v-html="blog.textField">{{ blog.textField }}</article>
@@ -30,7 +29,6 @@ export default {
     };
   },
   created() {
-    console.log("this is running");
     this.$http
       .get(
         `https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts/${this.id}/.json`
