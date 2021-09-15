@@ -56,7 +56,6 @@ export default {
           arrayOfObjects.push(data[key]);
         }
         this.posts = arrayOfObjects;
-        console.log(arrayOfObjects);
       });
   },
   filters: {

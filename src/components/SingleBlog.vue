@@ -34,12 +34,10 @@ export default {
         `https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts/${this.id}/.json`
       )
       .then((data) => {
-        console.log(data);
-        return data.json();
+         return data.json();
       })
       .then((data) => {
-        console.log(data);
-        this.blog = data;
+         this.blog = data;
       });
   },
 };
