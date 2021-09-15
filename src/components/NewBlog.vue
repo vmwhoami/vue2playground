@@ -27,6 +27,7 @@
                 :config="editorConfig"
               ></ckeditor>
             </div>
+            <h2>Hello world</h2>
             <div class="flex p-1">
               <button
                 class="p-3 bg-blue-500 text-white hover:bg-blue-400"
