@@ -1,6 +1,10 @@
 <template>
   <main class="mx-7 lg:mx-6 mt-32 flex-grow">
-    <h1 class="text-5xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3">Show blogs</h1>
+    <h1
+      class="text-5xl text-center font-bold leading-normal text-gray-900 mt-0 mb-3"
+    >
+      Show blogs
+    </h1>
     <input
       class="mx-7 lg:mx-6 mt-32 flex-grow"
       type="text"
@@ -81,8 +85,4 @@ export default {
 };
 </script>
 .red
-<style scoped>
-</style>
-
-
-
+<style scoped></style>

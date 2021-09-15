@@ -27,7 +27,6 @@
                 :config="editorConfig"
               ></ckeditor>
             </div>
-            <h2>Hello world</h2>
             <div class="flex p-1">
               <button
                 class="p-3 bg-blue-500 text-white hover:bg-blue-400"
@@ -69,11 +68,11 @@ export default {
       this.$http
         .post(
           "https://vuejs-18224-default-rtdb.europe-west1.firebasedatabase.app/posts.json",
-         {
-           title:this.blog.title,
-           textField: this.purifyText(this.blog.textField),
-           timeOfPosting: new Date().toLocaleString(),
-         }
+          {
+            title: this.blog.title,
+            textField: this.purifyText(this.blog.textField),
+            timeOfPosting: new Date().toLocaleString(),
+          }
         )
         .then(() => {
           this.submitted = true;
@@ -81,12 +80,10 @@ export default {
         .catch((err) => console.log(err));
     },
     purifyText(value) {
-       return DOMPurify.sanitize(value);
+      return DOMPurify.sanitize(value);
     },
   },
- 
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
